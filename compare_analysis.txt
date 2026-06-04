@@ -1,0 +1,4 @@
+  File "<string>", line 1
+    from mutagen.id3 import ID3; from mutagen.mp3 import MP3; import os; \ndef analyze(path): \n    if not os.path.exists(path): return; \n    audio = MP3(path); \n    print(f'--- {path} ---'); \n    print(f'ID3 version: {audio.tags.version}'); \n    apics = audio.tags.getall('APIC'); \n    for a in apics: print(f'APIC: mime={a.mime}, type={a.type}, desc={a.desc}, size={len(a.data)}'); \nanalyze('/home/betodebian/Música/RunicMusic/A Pesar de Todo.mp3'); \nanalyze('/home/betodebian/Música/RunicMusic/BAD BUNNY - LO QUE LE PASÓ A HAWAii.mp3');
+                                                                          ^
+SyntaxError: unexpected character after line continuation character

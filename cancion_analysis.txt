@@ -1,0 +1,4 @@
+ID3 version: (2, 3, 0)
+Tags found: ['TIT2', 'TPE1', 'TRCK', 'TDRC', 'TCON', 'TSSE', 'COMM:ID3v1 Comment:eng', 'TXXX:purl', 'TXXX:comment', 'APIC:Front Cover']
+APIC count: 1
+APIC: mime=image/jpeg, type=PictureType.COVER_FRONT, desc=Front Cover, size=95786
