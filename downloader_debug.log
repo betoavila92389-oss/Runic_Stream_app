@@ -13440,3 +13440,29 @@ FileNotFoundError: [Errno 2] No existe el fichero o el directorio: '/home/betode
 2026-06-01 09:47:53,051 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: MIzmBDF8P4w
 2026-06-01 09:47:53,178 - INFO - Inyección manual de metadatos y carátula completada con éxito.
 2026-06-01 09:47:53,178 - INFO - Audio guardado en formato MP3 con carátula manual: Rio_Roma_Cuenta_Conmigo_DJ_Sauly_Karaoke.mp3
+2026-06-03 23:22:28,548 - DEBUG - --- INICIO PROCESO MP3 --- | URL: https://www.youtube.com/watch?v=VnqRzCbCBEk
+2026-06-03 23:22:28,575 - INFO - [youtube] Extracting URL: https://www.youtube.com/watch?v=VnqRzCbCBEk
+2026-06-03 23:22:28,575 - INFO - [youtube] VnqRzCbCBEk: Downloading webpage
+2026-06-03 23:22:29,430 - WARNING - [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-06-03 23:22:29,433 - INFO - [youtube] VnqRzCbCBEk: Downloading android vr player API JSON
+2026-06-03 23:22:29,859 - INFO - [info] VnqRzCbCBEk: Downloading 1 format(s): 251
+2026-06-03 23:22:30,054 - INFO - [download] Destination: /home/albertoavilacachy/Música/RunicMusic/LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.webm
+2026-06-03 23:22:30,054 - INFO - [download] [0;94m  0.0%[0m of    2.58MiB at [0;32m 156.04KiB/s[0m ETA [0;33m00:16[0m
+2026-06-03 23:22:30,054 - INFO - [download] [0;94m  0.1%[0m of    2.58MiB at [0;32m 440.66KiB/s[0m ETA [0;33m00:05[0m
+2026-06-03 23:22:30,054 - INFO - [download] [0;94m  0.3%[0m of    2.58MiB at [0;32m1000.52KiB/s[0m ETA [0;33m00:02[0m
+2026-06-03 23:22:30,055 - INFO - [download] [0;94m  0.6%[0m of    2.58MiB at [0;32m   2.05MiB/s[0m ETA [0;33m00:01[0m
+2026-06-03 23:22:30,055 - INFO - [download] [0;94m  1.2%[0m of    2.58MiB at [0;32m   4.13MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,080 - INFO - [download] [0;94m  2.4%[0m of    2.58MiB at [0;32m   1.87MiB/s[0m ETA [0;33m00:01[0m
+2026-06-03 23:22:30,106 - INFO - [download] [0;94m  4.8%[0m of    2.58MiB at [0;32m   2.11MiB/s[0m ETA [0;33m00:01[0m
+2026-06-03 23:22:30,131 - INFO - [download] [0;94m  9.7%[0m of    2.58MiB at [0;32m   2.98MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,156 - INFO - [download] [0;94m 19.4%[0m of    2.58MiB at [0;32m   4.58MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,186 - INFO - [download] [0;94m 38.7%[0m of    2.58MiB at [0;32m   7.21MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,243 - INFO - [download] [0;94m 77.5%[0m of    2.58MiB at [0;32m  10.22MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,276 - INFO - [download] [0;94m100.0%[0m of    2.58MiB at [0;32m  11.30MiB/s[0m ETA [0;33m00:00[0m
+2026-06-03 23:22:30,278 - INFO - [download] 100% of    2.58MiB in [1;37m00:00:00[0m at [0;32m6.25MiB/s[0m
+2026-06-03 23:22:30,362 - INFO - [ExtractAudio] Destination: /home/albertoavilacachy/Música/RunicMusic/LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.mp3
+2026-06-03 23:22:31,738 - INFO - Deleting original file /home/albertoavilacachy/Música/RunicMusic/LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.webm (pass -k to keep)
+2026-06-03 23:22:31,739 - INFO - [Metadata] Adding metadata to "/home/albertoavilacachy/Música/RunicMusic/LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.mp3"
+2026-06-03 23:22:31,798 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: VnqRzCbCBEk
+2026-06-03 23:22:32,103 - INFO - Inyección manual de metadatos y carátula completada con éxito.
+2026-06-03 23:22:32,103 - INFO - Audio guardado en formato MP3 con carátula manual: LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.mp3

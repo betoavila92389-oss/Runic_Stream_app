@@ -5,13 +5,21 @@ from utils import get_music_dir, get_videos_dir
 from db import db
 
 def main():
-    # Verify OS paths and init DB on startup
+    """
+    Punto de entrada principal para la aplicación Runic Stream.
+    Inicializa los directorios requeridos, configura la interfaz gráfica de usuario
+    y aplica los estilos globales (QSS).
+    """
+    # Verificamos y creamos los directorios del SO al iniciar
+    # Esto asegura que las carpetas existan antes de que el usuario intente descargar algo
     _ = get_music_dir()
     _ = get_videos_dir()
     
+    # Inicializamos la aplicación de PyQt
     app = QApplication(sys.argv)
     
-    # Modern Dark Theme QSS
+    # Aplicamos un tema oscuro moderno usando QSS (Qt Style Sheets)
+    # Define la apariencia general de la aplicación, como colores y bordes
     app.setStyleSheet("""
         QMainWindow {
             background-color: #1e1e1e;
@@ -81,8 +89,11 @@ def main():
         }
     """)
     
+    # Creamos e iniciamos la ventana principal
     window = MainWindow()
     window.show()
+    
+    # Entramos en el bucle principal de eventos de la aplicación
     sys.exit(app.exec())
 
 if __name__ == "__main__":
