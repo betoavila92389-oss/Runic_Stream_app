@@ -13466,3 +13466,108 @@ FileNotFoundError: [Errno 2] No existe el fichero o el directorio: '/home/betode
 2026-06-03 23:22:31,798 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: VnqRzCbCBEk
 2026-06-03 23:22:32,103 - INFO - Inyección manual de metadatos y carátula completada con éxito.
 2026-06-03 23:22:32,103 - INFO - Audio guardado en formato MP3 con carátula manual: LO_QUE_LE_PASO_A_HAWAii_Cover_By_Vhamelin.mp3
+2026-06-04 00:04:06,816 - DEBUG - --- INICIO PROCESO MP3 --- | URL: https://www.youtube.com/watch?v=iV-iItNz1Bk
+2026-06-04 00:04:06,854 - INFO - [youtube] Extracting URL: https://www.youtube.com/watch?v=iV-iItNz1Bk
+2026-06-04 00:04:06,855 - INFO - [youtube] iV-iItNz1Bk: Downloading webpage
+2026-06-04 00:04:07,819 - WARNING - [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-06-04 00:04:07,822 - INFO - [youtube] iV-iItNz1Bk: Downloading android vr player API JSON
+2026-06-04 00:04:08,321 - INFO - [info] iV-iItNz1Bk: Downloading 1 format(s): 251
+2026-06-04 00:04:08,531 - INFO - [download] Destination: /home/albertoavilacachy/Música/RunicMusic/Besame_Mucho_-_Consuelo_Velazquez_Cover_by_Jasmine_Wesley.webm
+2026-06-04 00:04:08,532 - INFO - [download] [0;94m  0.0%[0m of    2.49MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:04:08,532 - INFO - [download] [0;94m  0.1%[0m of    2.49MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:04:08,532 - INFO - [download] [0;94m  0.3%[0m of    2.49MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:04:08,532 - INFO - [download] [0;94m  0.6%[0m of    2.49MiB at [0;32m  12.16MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,533 - INFO - [download] [0;94m  1.2%[0m of    2.49MiB at [0;32m  20.24MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,563 - INFO - [download] [0;94m  2.5%[0m of    2.49MiB at [0;32m   1.91MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:04:08,617 - INFO - [download] [0;94m  5.0%[0m of    2.49MiB at [0;32m   1.45MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:04:08,649 - INFO - [download] [0;94m 10.0%[0m of    2.49MiB at [0;32m   2.12MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:04:08,686 - INFO - [download] [0;94m 20.0%[0m of    2.49MiB at [0;32m   3.23MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,738 - INFO - [download] [0;94m 40.0%[0m of    2.49MiB at [0;32m   4.84MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,855 - INFO - [download] [0;94m 80.1%[0m of    2.49MiB at [0;32m   6.17MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,905 - INFO - [download] [0;94m100.0%[0m of    2.49MiB at [0;32m   6.68MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:04:08,907 - INFO - [download] 100% of    2.49MiB in [1;37m00:00:00[0m at [0;32m4.35MiB/s[0m
+2026-06-04 00:04:08,984 - INFO - [ExtractAudio] Destination: /home/albertoavilacachy/Música/RunicMusic/Besame_Mucho_-_Consuelo_Velazquez_Cover_by_Jasmine_Wesley.mp3
+2026-06-04 00:04:11,234 - INFO - Deleting original file /home/albertoavilacachy/Música/RunicMusic/Besame_Mucho_-_Consuelo_Velazquez_Cover_by_Jasmine_Wesley.webm (pass -k to keep)
+2026-06-04 00:04:11,235 - INFO - [Metadata] Adding metadata to "/home/albertoavilacachy/Música/RunicMusic/Besame_Mucho_-_Consuelo_Velazquez_Cover_by_Jasmine_Wesley.mp3"
+2026-06-04 00:04:11,313 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: iV-iItNz1Bk
+2026-06-04 00:04:11,727 - INFO - Inyección manual de metadatos y carátula completada con éxito.
+2026-06-04 00:04:11,727 - INFO - Archivo guardado correctamente: Besame_Mucho_-_Consuelo_Velazquez_Cover_by_Jasmine_Wesley.mp3
+2026-06-04 00:08:45,974 - DEBUG - --- INICIO PROCESO MP3 --- | URL: https://www.youtube.com/watch?v=oU5I-mg2wZw
+2026-06-04 00:08:46,004 - INFO - [youtube] Extracting URL: https://www.youtube.com/watch?v=oU5I-mg2wZw
+2026-06-04 00:08:46,004 - INFO - [youtube] oU5I-mg2wZw: Downloading webpage
+2026-06-04 00:08:46,939 - WARNING - [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-06-04 00:08:46,941 - INFO - [youtube] oU5I-mg2wZw: Downloading android vr player API JSON
+2026-06-04 00:08:47,316 - INFO - [info] oU5I-mg2wZw: Downloading 1 format(s): 251
+2026-06-04 00:08:47,443 - INFO - [download] Destination: /home/albertoavilacachy/Música/RunicMusic/Ojitos_Lindos_-_Bad_Bunny_Bomba_Estereo_Sofia_Sahagun_ft_Ivan_Loga_Acoustic_Cover.webm
+2026-06-04 00:08:47,444 - INFO - [download] [0;94m  0.0%[0m of    4.79MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:08:47,444 - INFO - [download] [0;94m  0.1%[0m of    4.79MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:08:47,444 - INFO - [download] [0;94m  0.1%[0m of    4.79MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:08:47,445 - INFO - [download] [0;94m  0.3%[0m of    4.79MiB at [0;32m  11.68MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:08:47,473 - INFO - [download] [0;94m  0.6%[0m of    4.79MiB at [0;32m   1.03MiB/s[0m ETA [0;33m00:04[0m
+2026-06-04 00:08:47,491 - INFO - [download] [0;94m  1.3%[0m of    4.79MiB at [0;32m   1.31MiB/s[0m ETA [0;33m00:03[0m
+2026-06-04 00:08:47,517 - INFO - [download] [0;94m  2.6%[0m of    4.79MiB at [0;32m   1.68MiB/s[0m ETA [0;33m00:02[0m
+2026-06-04 00:08:47,548 - INFO - [download] [0;94m  5.2%[0m of    4.79MiB at [0;32m   2.38MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:08:47,572 - INFO - [download] [0;94m 10.4%[0m of    4.79MiB at [0;32m   3.88MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:08:47,626 - INFO - [download] [0;94m 20.9%[0m of    4.79MiB at [0;32m   5.48MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:08:47,695 - INFO - [download] [0;94m 41.8%[0m of    4.79MiB at [0;32m   7.95MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:08:47,841 - INFO - [download] [0;94m 83.6%[0m of    4.79MiB at [0;32m  10.06MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:08:47,891 - INFO - [download] [0;94m100.0%[0m of    4.79MiB at [0;32m  10.68MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:08:47,896 - INFO - [download] 100% of    4.79MiB in [1;37m00:00:00[0m at [0;32m8.34MiB/s[0m
+2026-06-04 00:08:47,967 - INFO - [ExtractAudio] Destination: /home/albertoavilacachy/Música/RunicMusic/Ojitos_Lindos_-_Bad_Bunny_Bomba_Estereo_Sofia_Sahagun_ft_Ivan_Loga_Acoustic_Cover.mp3
+2026-06-04 00:08:52,389 - INFO - Deleting original file /home/albertoavilacachy/Música/RunicMusic/Ojitos_Lindos_-_Bad_Bunny_Bomba_Estereo_Sofia_Sahagun_ft_Ivan_Loga_Acoustic_Cover.webm (pass -k to keep)
+2026-06-04 00:08:52,390 - INFO - [Metadata] Adding metadata to "/home/albertoavilacachy/Música/RunicMusic/Ojitos_Lindos_-_Bad_Bunny_Bomba_Estereo_Sofia_Sahagun_ft_Ivan_Loga_Acoustic_Cover.mp3"
+2026-06-04 00:08:52,479 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: oU5I-mg2wZw
+2026-06-04 00:08:52,801 - INFO - Inyección manual de metadatos y carátula completada con éxito.
+2026-06-04 00:08:52,801 - INFO - Archivo guardado correctamente: Ojitos_Lindos_-_Bad_Bunny_Bomba_Estereo_Sofia_Sahagun_ft_Ivan_Loga_Acoustic_Cover.mp3
+2026-06-04 00:26:14,045 - DEBUG - --- INICIO PROCESO MP3 --- | URL: https://www.youtube.com/watch?v=YhypdPFBEPU
+2026-06-04 00:26:14,077 - INFO - [youtube] Extracting URL: https://www.youtube.com/watch?v=YhypdPFBEPU
+2026-06-04 00:26:14,077 - INFO - [youtube] YhypdPFBEPU: Downloading webpage
+2026-06-04 00:26:14,742 - WARNING - [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-06-04 00:26:14,745 - INFO - [youtube] YhypdPFBEPU: Downloading android vr player API JSON
+2026-06-04 00:26:15,340 - INFO - [info] YhypdPFBEPU: Downloading 1 format(s): 251
+2026-06-04 00:26:15,565 - INFO - [download] Destination: /home/albertoavilacachy/Música/RunicMusic/Noche_No_Te_Vayas.webm
+2026-06-04 00:26:15,565 - INFO - [download] [0;94m  0.0%[0m of    2.58MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:26:15,565 - INFO - [download] [0;94m  0.1%[0m of    2.58MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:26:15,566 - INFO - [download] [0;94m  0.3%[0m of    2.58MiB at [0;32m Unknown B/s[0m ETA [0;33mUnknown[0m
+2026-06-04 00:26:15,566 - INFO - [download] [0;94m  0.6%[0m of    2.58MiB at [0;32m  12.64MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:15,566 - INFO - [download] [0;94m  1.2%[0m of    2.58MiB at [0;32m  20.76MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:15,586 - INFO - [download] [0;94m  2.4%[0m of    2.58MiB at [0;32m   2.88MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:15,633 - INFO - [download] [0;94m  4.8%[0m of    2.58MiB at [0;32m   1.83MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:26:15,679 - INFO - [download] [0;94m  9.6%[0m of    2.58MiB at [0;32m   2.19MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:26:15,721 - INFO - [download] [0;94m 19.3%[0m of    2.58MiB at [0;32m   3.19MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:15,826 - INFO - [download] [0;94m 38.7%[0m of    2.58MiB at [0;32m   3.83MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:16,032 - INFO - [download] [0;94m 77.5%[0m of    2.58MiB at [0;32m   4.27MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:16,129 - INFO - [download] [0;94m100.0%[0m of    2.58MiB at [0;32m   4.57MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:26:16,132 - INFO - [download] 100% of    2.58MiB in [1;37m00:00:00[0m at [0;32m3.30MiB/s[0m
+2026-06-04 00:26:16,210 - INFO - [ExtractAudio] Destination: /home/albertoavilacachy/Música/RunicMusic/Noche_No_Te_Vayas.mp3
+2026-06-04 00:26:18,888 - INFO - Deleting original file /home/albertoavilacachy/Música/RunicMusic/Noche_No_Te_Vayas.webm (pass -k to keep)
+2026-06-04 00:26:18,889 - INFO - [Metadata] Adding metadata to "/home/albertoavilacachy/Música/RunicMusic/Noche_No_Te_Vayas.mp3"
+2026-06-04 00:26:18,968 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: YhypdPFBEPU
+2026-06-04 00:26:19,313 - INFO - Inyección manual de metadatos y carátula completada con éxito.
+2026-06-04 00:26:19,313 - INFO - Archivo guardado correctamente: Noche_No_Te_Vayas.mp3
+2026-06-04 00:27:16,810 - DEBUG - --- INICIO PROCESO MP3 --- | URL: https://www.youtube.com/watch?v=mxCW-5nUidw
+2026-06-04 00:27:16,840 - INFO - [youtube] Extracting URL: https://www.youtube.com/watch?v=mxCW-5nUidw
+2026-06-04 00:27:16,840 - INFO - [youtube] mxCW-5nUidw: Downloading webpage
+2026-06-04 00:27:17,693 - WARNING - [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-06-04 00:27:17,696 - INFO - [youtube] mxCW-5nUidw: Downloading android vr player API JSON
+2026-06-04 00:27:18,094 - INFO - [info] mxCW-5nUidw: Downloading 1 format(s): 251
+2026-06-04 00:27:18,218 - INFO - [download] Destination: /home/albertoavilacachy/Música/RunicMusic/Vamonos_a_Marte.webm
+2026-06-04 00:27:18,219 - INFO - [download] [0;94m  0.0%[0m of    2.62MiB at [0;32m 195.92KiB/s[0m ETA [0;33m00:13[0m
+2026-06-04 00:27:18,219 - INFO - [download] [0;94m  0.1%[0m of    2.62MiB at [0;32m 541.99KiB/s[0m ETA [0;33m00:04[0m
+2026-06-04 00:27:18,219 - INFO - [download] [0;94m  0.3%[0m of    2.62MiB at [0;32m   1.18MiB/s[0m ETA [0;33m00:02[0m
+2026-06-04 00:27:18,220 - INFO - [download] [0;94m  0.6%[0m of    2.62MiB at [0;32m   2.42MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:27:18,229 - INFO - [download] [0;94m  1.2%[0m of    2.62MiB at [0;32m   1.93MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:27:18,243 - INFO - [download] [0;94m  2.4%[0m of    2.62MiB at [0;32m   2.07MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:27:18,264 - INFO - [download] [0;94m  4.7%[0m of    2.62MiB at [0;32m   2.45MiB/s[0m ETA [0;33m00:01[0m
+2026-06-04 00:27:18,289 - INFO - [download] [0;94m  9.5%[0m of    2.62MiB at [0;32m   3.28MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:27:18,320 - INFO - [download] [0;94m 19.1%[0m of    2.62MiB at [0;32m   4.67MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:27:18,406 - INFO - [download] [0;94m 38.2%[0m of    2.62MiB at [0;32m   5.19MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:27:18,560 - INFO - [download] [0;94m 76.4%[0m of    2.62MiB at [0;32m   5.78MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:27:18,640 - INFO - [download] [0;94m100.0%[0m of    2.62MiB at [0;32m   6.14MiB/s[0m ETA [0;33m00:00[0m
+2026-06-04 00:27:18,644 - INFO - [download] 100% of    2.62MiB in [1;37m00:00:00[0m at [0;32m4.85MiB/s[0m
+2026-06-04 00:27:18,684 - INFO - [ExtractAudio] Destination: /home/albertoavilacachy/Música/RunicMusic/Vamonos_a_Marte.mp3
+2026-06-04 00:27:21,237 - INFO - Deleting original file /home/albertoavilacachy/Música/RunicMusic/Vamonos_a_Marte.webm (pass -k to keep)
+2026-06-04 00:27:21,237 - INFO - [Metadata] Adding metadata to "/home/albertoavilacachy/Música/RunicMusic/Vamonos_a_Marte.mp3"
+2026-06-04 00:27:21,315 - DEBUG - Iniciando inyección manual de metadatos y carátula para ID: mxCW-5nUidw
+2026-06-04 00:27:21,603 - INFO - Inyección manual de metadatos y carátula completada con éxito.
+2026-06-04 00:27:21,603 - INFO - Archivo guardado correctamente: Vamonos_a_Marte.mp3

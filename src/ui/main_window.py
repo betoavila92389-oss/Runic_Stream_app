@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import (
     QLabel, QListWidget, QProgressBar, QMessageBox, QListWidgetItem, 
     QSlider, QStyle, QApplication, QFrame, QScrollArea, QPushButton
 )
-from PyQt6.QtCore import Qt, QUrl, QSize, QEvent
+from PyQt6.QtCore import Qt, QUrl, QSize, QEvent, QTimer
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from .common import PlaylistWidgetItem
 from .tabs.downloads import DownloadsTab
@@ -57,8 +57,8 @@ class MainWindow(QMainWindow):
         self.init_ui()
         # Auto-detectar URLs de YouTube en el portapapeles
         self.check_clipboard_for_url()
-        # Cargar los datos desde la base de datos al inicio
-        self.load_media_library()
+        # Retrasar ligeramente la carga de la biblioteca para permitir que la UI cargue instantáneamente
+        QTimer.singleShot(100, self.load_media_library)
         
         # Señal cuando se cambia de pestaña
         self.tabs.currentChanged.connect(self.on_tab_changed)
@@ -212,8 +212,8 @@ class MainWindow(QMainWindow):
         """
         Se dispara cuando el usuario cambia de pestaña. 
         Asigna el reproductor de video a la vista correspondiente de la pestaña activa.
+        Nota: Ya no recarga la librería aquí para evitar congelamientos de UI y microcortes de audio.
         """
-        self.load_media_library()
         # Si es la pestaña 1 (Mis Videos) usa su reproductor, si es la 3 (Streaming) usa el de stream, sino Null
         self.player.setVideoOutput(self.tab_videos_widget.video_widget if idx == 1 else (self.tab_streaming_widget.stream_video_widget if idx == 3 else None))
 

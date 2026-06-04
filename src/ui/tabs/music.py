@@ -3,12 +3,13 @@ from pathlib import Path
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton, 
                              QSlider, QLabel, QTreeWidget, QTreeWidgetItem, 
                              QStackedWidget, QComboBox, QFrame, QTreeWidgetItemIterator, QLineEdit)
-from PyQt6.QtCore import Qt, QTimer, pyqtSignal
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal, QThread
 from PyQt6.QtGui import QPixmap, QImage, QPainter, QColor, QShortcut, QKeySequence
 from PyQt6.QtMultimedia import QMediaPlayer
 from utils import get_music_dir
 from mutagen import File
 import random
+import unicodedata
 
 def extract_metadata(file_path):
     """
@@ -105,6 +106,26 @@ class ClickableSlider(QSlider):
         # Emite señal de seek cuando se manipula mediante teclado
         if event.key() in (Qt.Key.Key_Left, Qt.Key.Key_Right):
             self.seekRequested.emit(self.value())
+
+class MusicLibraryLoaderThread(QThread):
+    finished_loading = pyqtSignal(list)
+    error_occurred = pyqtSignal(str)
+
+    def run(self):
+        try:
+            all_songs = []
+            music_dir = get_music_dir()
+            
+            for root, dirs, files in os.walk(music_dir):
+                for file in files:
+                    if file.lower().endswith(('.mp3', '.m4a', '.wav', '.flac', '.ogg')):
+                        path = os.path.join(root, file)
+                        all_songs.append(extract_metadata(path))
+                        
+            self.finished_loading.emit(all_songs)
+        except Exception as e:
+            self.error_occurred.emit(str(e))
+
 
 class MusicTab(QWidget):
     """
@@ -230,9 +251,18 @@ class MusicTab(QWidget):
         sort_layout.addWidget(QLabel("Ordenar y Agrupar por:"))
         self.sort_combo = QComboBox()
         self.sort_combo.addItems(["Artista y Álbum", "Nombre", "Álbum"])
+        self.sort_combo.setCurrentIndex(1) # Por defecto ordenado por Nombre de canción
         self.sort_combo.currentIndexChanged.connect(self.build_tree)
         sort_layout.addWidget(self.sort_combo)
         sort_layout.addStretch()
+        
+        # Botón para actualizar manualmente la biblioteca
+        self.btn_refresh = QPushButton("🔄 Actualizar")
+        self.btn_refresh.setToolTip("Recargar lista de canciones")
+        self.btn_refresh.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.btn_refresh.clicked.connect(self.load_library)
+        sort_layout.addWidget(self.btn_refresh)
+        
         right_layout.addLayout(sort_layout)
         
         # Componente TreeView para agrupar jerárquicamente canciones
@@ -240,6 +270,12 @@ class MusicTab(QWidget):
         self.tree_widget.setHeaderLabels(["Biblioteca de Música Descargada"])
         self.tree_widget.itemDoubleClicked.connect(self.on_item_double_clicked)
         right_layout.addWidget(self.tree_widget)
+        
+        # Label para mostrar artista coincidente
+        self.lbl_matched_artist = QLabel("")
+        self.lbl_matched_artist.setStyleSheet("color: #3498db; font-weight: bold;")
+        self.lbl_matched_artist.setVisible(False)
+        right_layout.addWidget(self.lbl_matched_artist)
         
         main_layout.addWidget(left_pane)
         main_layout.addWidget(right_pane, 1)
@@ -286,37 +322,95 @@ class MusicTab(QWidget):
         
     def load_library(self):
         """
-        Escanea recursivamente el directorio raíz de música asignado al sistema,
-        y lee metadatos crudos del archivo, poblando la lista base (self.all_songs).
-        Esta función se prefiere ante la BD para el audio porque captura cambios de archivos offline.
+        Inicia un hilo en segundo plano para escanear recursivamente el directorio raíz 
+        de música asignado al sistema y leer metadatos de los archivos, sin bloquear la UI.
         """
-        self.all_songs = []
-        music_dir = get_music_dir()
-        
-        # Buscamos de forma profunda todos los archivos compatibles en local
-        for root, dirs, files in os.walk(music_dir):
-            for file in files:
-                if file.lower().endswith(('.mp3', '.m4a', '.wav', '.flac', '.ogg')):
-                    path = os.path.join(root, file)
-                    self.all_songs.append(extract_metadata(path))
-                    
+        self.btn_refresh.setEnabled(False)
+        self.btn_refresh.setText("⏳ Cargando...")
+        self.tree_widget.topLevelItem(0) if self.tree_widget.topLevelItemCount() > 0 else self.tree_widget.setHeaderLabels(["Cargando biblioteca..."])
+        self.loader_thread = MusicLibraryLoaderThread()
+        self.loader_thread.finished_loading.connect(self.on_library_loaded)
+        self.loader_thread.error_occurred.connect(self.on_library_error)
+        self.loader_thread.start()
+
+    def on_library_loaded(self, songs):
+        """Callback cuando el hilo termina de cargar con éxito."""
+        self.all_songs = songs
+        self.tree_widget.setHeaderLabels(["Biblioteca de Música Descargada"])
         self.build_tree()
+        
+        # Efecto visual de éxito
+        self.btn_refresh.setEnabled(True)
+        self.btn_refresh.setText("✅ Actualizado")
+        self.btn_refresh.setStyleSheet("background-color: #1db954; color: black; font-weight: bold;")
+        
+        # Restaurar botón después de 3 segundos
+        QTimer.singleShot(3000, self.restore_refresh_button)
+
+    def on_library_error(self, error_msg):
+        """Callback cuando el hilo falla."""
+        self.btn_refresh.setEnabled(True)
+        self.btn_refresh.setText("❌ Error")
+        self.btn_refresh.setStyleSheet("background-color: #e74c3c; color: white; font-weight: bold;")
+        self.tree_widget.setHeaderLabels([f"Error: {error_msg}"])
+        
+        # Restaurar botón después de 4 segundos
+        QTimer.singleShot(4000, self.restore_refresh_button)
+
+    def restore_refresh_button(self):
+        """Restaura el aspecto original del botón de actualización."""
+        self.btn_refresh.setText("🔄 Actualizar")
+        self.btn_refresh.setStyleSheet("")
 
     def build_tree(self):
         """
         Filtra y renderiza la estructura de árbol visible (QTreeWidget)
         basándose en el término buscado y en el criterio de ordenación (combobox).
         """
+        def strip_accents(text):
+            """Elimina los acentos (diacríticos) de un string para búsquedas flexibles."""
+            if not text:
+                return text
+            # Descompone los caracteres (NFD) y filtra los diacríticos (Mn), luego une
+            return ''.join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
+
+        # Guardamos la ruta de la canción que se está reproduciendo actualmente
+        current_playing_path = None
+        if self.current_index >= 0 and self.current_index < len(self.current_playlist):
+            current_playing_path = self.current_playlist[self.current_index][0]
+
         self.tree_widget.clear()
         sort_mode = self.sort_combo.currentText()
-        search_query = self.search_input.text().strip().lower()
+        
+        # Limpiamos y quitamos acentos de la búsqueda
+        raw_search_query = self.search_input.text().strip().lower()
+        search_query = strip_accents(raw_search_query)
+        
+        matched_artist = None
         
         filtered_songs = self.all_songs
         if search_query:
-            # Filtro básico por título o nombre de artista ignorando capitalización
-            filtered_songs = [s for s in self.all_songs if search_query in s['title'].lower() or search_query in s['artist'].lower()]
+            # Filtro básico por título o nombre de artista ignorando capitalización y acentos
+            filtered_songs = []
+            for s in self.all_songs:
+                clean_title = strip_accents(s['title'].lower())
+                clean_artist = strip_accents(s['artist'].lower())
+                
+                if search_query in clean_title:
+                    filtered_songs.append(s)
+                elif search_query in clean_artist:
+                    filtered_songs.append(s)
+                    if not matched_artist:
+                        matched_artist = s['artist'] # Mostramos el artista original (con acentos si los tiene)
+            
             # Sobrescribe modo de orden para facilitar vista de listas cuando se está buscando
             sort_mode = "Nombre"
+            
+        if matched_artist:
+            self.lbl_matched_artist.setText(f"Artista encontrado: {matched_artist}")
+            self.lbl_matched_artist.setVisible(True)
+        else:
+            self.lbl_matched_artist.setVisible(False)
         
         if sort_mode == "Artista y Álbum":
             # Estructura de anidamiento complejo: [Artista] -> [Album] -> Pista
@@ -364,8 +458,17 @@ class MusicTab(QWidget):
         self.update_current_playlist()
         
         # Intenta re-destacar visualmente en la lista la canción que está sonando
-        if self.current_index >= 0 and self.current_index < len(self.current_playlist):
-            self.highlight_current_song(self.current_playlist[self.current_index][0])
+        if current_playing_path:
+            # Buscar el nuevo índice en la playlist filtrada
+            new_index = -1
+            for i, (p, meta) in enumerate(self.current_playlist):
+                if p == current_playing_path:
+                    new_index = i
+                    break
+            
+            self.current_index = new_index
+            if self.current_index != -1:
+                self.highlight_current_song(current_playing_path)
 
     def update_current_playlist(self):
         """Sincroniza la lista de reproducción interna (lógica) con los elementos actualmente filtrados en la vista (UI)."""
